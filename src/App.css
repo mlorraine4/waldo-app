@@ -1,38 +1,209 @@
-.App {
+@font-face {
+  font-family: "Horror";
+  src: local("Horror"),
+    url("../src/fonts/MonsterBlood-ALXnD.ttf")
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+}
+
+button {
+  padding: 4px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 75px;
+}
+
+button:focus {
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 0 5px rgb(169, 197, 47);
+}
+
+#header {
+  height: min-content;
+  background-color: rgb(36, 35, 35);
+  color: rgb(245, 245, 245);
+}
+
+#logo {
+  font-weight: bold;
+  padding: 5px;
+}
+
+#homePage {
+  background-color: rgb(229, 225, 225);
+  height: calc(100vh - 31.4px);
+  min-width: 800px;
+  width: 100vw;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.flex {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.previewDiv {
+  width: 400px;
+  height: auto;
+  margin: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.previewDiv:hover {
+  box-shadow: 0 0 5px gray;
+}
+
+.previewImg {
+  width: 80%;
+  height: auto;
+  margin: 0 auto 10px auto;
+}
+
+#horrorPreview {
+  font-family: "Horror";
+  font-size: 80px;
+}
+
+#viewBox {
+  display: none;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  left: 0;
+  top: 0;
+}
+
+.locationPin {
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+}
+
+.found {
+  text-decoration: line-through;
+}
+
+#pokemonBoard, #ghibliBoard, #zeldaBoard, #horrorBoard {
+  position: relative;
+  margin: 0 auto 0 auto;
+}
+
+#pokemonMain, #ghibliMain, #zeldaMain, #horrorMain {
+  background-color: rgb(211, 211, 213);
+}
+
+#pokemonBoard, #pokemonImg {
+  height: auto;
+  width: 800px;
+}
+
+#ghibliBoard, #ghibliImg {
+  height: auto;
+  width: 1500px;
+}
+
+#zeldaBoard, #zeldaImg {
+  width: 1500px;
+  height: auto;
+}
+
+#horrorImg, #horrorBoard {
+  height: auto;
+  width: 1060px;
+}
+
+.characterList {
+  z-index: 2;
+  width: min-content;
+  position: fixed;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 8px;
+  height: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.charName {
+  white-space: nowrap;
+  text-align: center;
+}
+
+.charImg {
+  height: 10%;
+  padding: 2px;
+  margin: 0 auto 0 auto;
+}
+
+#winDisplay {
+  position: fixed;
+  top: 40px;
+  width: 200px;
+  margin: 0 auto 0 auto;
+  border-radius: 8px;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(36, 35, 35);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#winTitle {
+  color: rgb(245, 245, 245);
+  padding: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#submit {
+  background-color: rgb(80, 93, 23);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 0 5px #999;
+}
+
+#submit:active, #score:active {
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+#cancel {
+  background-color: rgb(93, 25, 23);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 0 5px #999;
+}
+
+#score {
+  color: rgb(169, 197, 47);
+  font-weight: bold;
+  padding: 2px;
 }
