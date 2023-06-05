@@ -3,7 +3,7 @@ import CharacterList, { HorrorCharacters } from "./CharacterList";
 import Header from "./Header";
 import WinDisplay from "./WinDisplay";
 
-const FindHorror = ({ Game, score, sizeHeader, handleScore, handleWin }) => {
+const FindHorror = ({ Game, score, sizeHeader }) => {
   const NewGame = Game;
   NewGame.changePage("horror");
   let headerWidth = sizeHeader(1060);
@@ -12,12 +12,7 @@ const FindHorror = ({ Game, score, sizeHeader, handleScore, handleWin }) => {
       <Header style={{ width: headerWidth }} />
       <div id="horrorMain">
         <HorrorCharacters getCharacterPosition={NewGame.getCharacterPosition} />
-        <WinDisplay
-          score={score}
-          page={"horror"}
-          handleScore={handleScore}
-          handleWin={handleWin}
-        />
+        <WinDisplay score={score} page={"horror"} />
         <div id="horrorBoard">
           <img
             id="horrorImg"

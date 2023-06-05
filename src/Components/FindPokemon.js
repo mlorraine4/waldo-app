@@ -3,7 +3,7 @@ import { PokemonCharacters } from "./CharacterList";
 import Header from "./Header";
 import WinDisplay from "./WinDisplay";
 
-const FindPokemon = ({ Game, score, sizeHeader, handleScore, handleWin }) => {
+const FindPokemon = ({ Game, score, sizeHeader }) => {
   const NewGame = Game;
   NewGame.changePage("pokemon");
   let headerWidth = sizeHeader(800);
@@ -14,12 +14,7 @@ const FindPokemon = ({ Game, score, sizeHeader, handleScore, handleWin }) => {
         <PokemonCharacters
           getCharacterPosition={NewGame.getCharacterPosition}
         />
-        <WinDisplay
-          score={score}
-          page={"pokemon"}
-          handleScore={handleScore}
-          handleWin={handleWin}
-        />
+        <WinDisplay score={score} page={"pokemon"} />
         <div id="pokemonBoard">
           <img
             id="pokemonImg"

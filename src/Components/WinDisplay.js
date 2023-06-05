@@ -2,7 +2,7 @@ import { collection, doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase-config";
 import { useState } from "react";
 
-const WinDisplay = ({ score, page, handleScore, handleWin }) => {
+const WinDisplay = ({ score, page }) => {
   const [sent, setSent] = useState(false);
 
   // Gets player's name to save with their score.
@@ -27,7 +27,7 @@ const WinDisplay = ({ score, page, handleScore, handleWin }) => {
     window.location.reload();
   };
 
-  if (sent === false && Object.keys(score).length !== 0) {
+  if (!sent && Object.keys(score).length !== 0) {
     return (
       <div id="winDisplay">
         <form onSubmit={formSubmit}>
@@ -45,7 +45,7 @@ const WinDisplay = ({ score, page, handleScore, handleWin }) => {
         </form>
       </div>
     );
-  } else if (Object.keys(score).length === 0 && sent === false) {
+  } else if (Object.keys(score).length === 0 && !sent) {
     return <></>;
   } else {
     return (

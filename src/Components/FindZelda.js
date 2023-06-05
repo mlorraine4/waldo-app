@@ -3,7 +3,7 @@ import { ZeldaCharacters } from "./CharacterList";
 import Header from "./Header";
 import WinDisplay from "./WinDisplay";
 
-const FindZelda = ({ Game, score, sizeHeader, handleScore, handleWin }) => {
+const FindZelda = ({ Game, score, sizeHeader }) => {
   const NewGame = Game;
   NewGame.changePage("zelda");
   let headerWidth = sizeHeader(1500);
@@ -12,12 +12,7 @@ const FindZelda = ({ Game, score, sizeHeader, handleScore, handleWin }) => {
       <Header style={{ width: headerWidth }} />
       <div id="zeldaMain">
         <ZeldaCharacters getCharacterPosition={NewGame.getCharacterPosition} />
-        <WinDisplay
-          score={score}
-          page={"zelda"}
-          handleScore={handleScore}
-          handleWin={handleWin}
-        />
+        <WinDisplay score={score} page={"zelda"} />
         <div id="zeldaBoard">
           <img
             id="zeldaImg"

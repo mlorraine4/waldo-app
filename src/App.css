@@ -4,6 +4,11 @@
     url("../src/fonts/MonsterBlood-ALXnD.ttf")
 }
 
+body {
+  margin: 0;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -62,16 +67,36 @@ button:focus {
   justify-content: center;
   align-items: center;
   padding: 10px;
-}
-
-.previewDiv:hover {
-  box-shadow: 0 0 5px gray;
+  position: relative;
 }
 
 .previewImg {
   width: 80%;
   height: auto;
   margin: 0 auto 10px auto;
+}
+
+.hide {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start {
+  width: 25%;
+  height: auto;
+}
+
+.hide:hover {
+  opacity: 1;
 }
 
 #horrorPreview {

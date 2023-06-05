@@ -53,7 +53,7 @@ function App() {
 
     // Determines if image is offset on page and if so corrects clicked coordinates.
     const getOffset = (id) => {
-      if (win === false) {
+      if (!win) {
         let img = document.querySelector(id);
         let left = 0;
         let top = 0;
@@ -71,7 +71,7 @@ function App() {
 
     // Retrieves firebase document object of clicked character.
     const getCharacterPosition = async (e) => {
-      if (win === false) {
+      if (!win) {
         let character = e.target.id;
         const docRef = doc(db, page, character);
         const docSnap = await getDoc(docRef);
@@ -96,7 +96,7 @@ function App() {
       if (data.leftY <= Y && Y <= data.rightY) {
         foundY = true;
       }
-      if (foundX === true && foundY === true) {
+      if (foundX && foundY) {
         saveFind(id);
         updateDisplay(id);
         placeMarker();
@@ -104,7 +104,7 @@ function App() {
       }
     };
 
-    // Saves correct click for character find.
+    // Saves which character was found by player.
     const saveFind = (name) => {
       const currentChar = characters.find(
         (character) => character.name === name
@@ -143,7 +143,7 @@ function App() {
     const checkForWin = () => {
       let found = 0;
       for (let character of characters) {
-        if (character.found === true) found++;
+        if (character.found) found++;
       }
       if (found === 6) {
         end = Date.now();
