@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "./firebase-config";
@@ -9,9 +9,7 @@ import FindZelda from "./Components/FindZelda";
 import FindPokemon from "./Components/FindPokemon";
 import FindHorror from "./Components/FindHorror";
 import pinImg from "./images/location-pin.png";
-
-// TODO: check timer!
-// TODO: was able to fade character out even though I didn't correctly find it?
+import HighScores from "./Components/HighScores";
 
 function App() {
   const [score, setScore] = useState({});
@@ -118,13 +116,11 @@ function App() {
       document.getElementById(id).style.opacity = 0.5;
       document.getElementById(id).style.pointerEvents = "none";
       let charNames = document.querySelectorAll(".charName");
-      charNames.forEach(
-        function(node) {
-          if (node.innerHTML === id) {
-            node.classList.add("found");
-          }
+      charNames.forEach(function (node) {
+        if (node.innerHTML === id) {
+          node.classList.add("found");
         }
-      )
+      });
     };
 
     // Places a location pin on board after player correctly finds a character.
@@ -133,11 +129,11 @@ function App() {
       pin.src = pinImg;
       pin.className = "locationPin";
       pin.style.position = "absolute";
-      pin.style.left = (X-10).toString() + "px";
-      pin.style.top = (Y).toString() + "px";
-      let header = document.querySelector("#header");
-      header.appendChild(pin);
-    }
+      pin.style.left = (X - 8).toString() + "px";
+      pin.style.top = (Y - 25).toString() + "px";
+      let board = document.getElementById(page + "Board");
+      board.appendChild(pin);
+    };
 
     // Checks character array to see if all have been found.
     const checkForWin = () => {
@@ -199,7 +195,7 @@ function App() {
       secs = "0" + secs;
     }
 
-    let score = { hour: hrs, minute: mins, second: secs };
+    let score = { hour: hrs, minute: mins, second: secs, ms: ms };
     setScore(score);
   }
 
@@ -279,6 +275,7 @@ function App() {
               />
             }
           />
+          <Route path={"/high-scores"} element={<HighScores />} />
         </Routes>
       </BrowserRouter>
     </div>

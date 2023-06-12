@@ -1,6 +1,8 @@
 import { collection, doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase-config";
 import { useState } from "react";
+const images = require.context("../images/playerIcons", true);
+const imageList = images.keys().map((image) => images(image));
 
 const WinDisplay = ({ score, page }) => {
   const [sent, setSent] = useState(false);
@@ -8,14 +10,16 @@ const WinDisplay = ({ score, page }) => {
   // Gets player's name to save with their score.
   const formSubmit = (e) => {
     e.preventDefault();
-    saveScore(e.target["name"].value, score);
+    let icon = Number(document.querySelector('input[name="icon"]:checked').id);
+    saveScore(e.target["name"].value, icon, score);
   };
 
   // Saves player score after win to firebase and resets score/win prop.
-  const saveScore = async (name, score) => {
+  const saveScore = async (name, icon, score) => {
     const docRef = doc(collection(db, "PlayerScore"));
     await setDoc(docRef, {
       name: name,
+      icon: icon,
       score: score,
       page: page,
     });
@@ -33,9 +37,22 @@ const WinDisplay = ({ score, page }) => {
         <form onSubmit={formSubmit}>
           <div id="winTitle">Your Score</div>
           <div id="score">
-            {score.hour}:{score.minute}:{score.second}
+            {score.hour}:{score.minute}:{score.second} s
           </div>
-          <input id="name" required placeholder="enter your name"></input>
+          <input
+            id="name"
+            required
+            maxLength="12"
+            placeholder="enter your name"
+          ></input>
+          <div className="iconsList">
+            {imageList.map((image, index) => (
+              <label>
+                <input type="radio" name="icon" id={index}></input>
+                <img key={index} src={image} className="playerIcon"></img>
+              </label>
+            ))}
+          </div>
           <button type="submit" id="submit">
             save score
           </button>

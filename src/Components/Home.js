@@ -39,7 +39,7 @@ const Home = () => {
           </div>
           <div className="previewDiv">
             <Link to="/horror" reloadDocument>
-              <div id="horrorPreview">MASH UP</div>
+              <div id="horrorPreview">HORROR</div>
               <div className="hide">
                 <img src={start} className="start"></img>
               </div>
