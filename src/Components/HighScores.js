@@ -39,7 +39,7 @@ const HighScores = () => {
     <div id="highScoresMain">
       <div id="highScoresHeader">
         <div id="highScoresTitle">HIGH SCORES</div>
-        <Link to="/">
+        <Link to="/waldo-app">
           <img id="back" src={backArrow}></img>
         </Link>
       </div>
