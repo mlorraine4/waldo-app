@@ -7,14 +7,14 @@ const imageList = images.keys().map((image) => images(image));
 const WinDisplay = ({ score, page }) => {
   const [sent, setSent] = useState(false);
 
-  // Gets player's name to save with their score.
+  // Get and save player's chosen name and icon.
   const formSubmit = (e) => {
     e.preventDefault();
     let icon = Number(document.querySelector('input[name="icon"]:checked').id);
     saveScore(e.target["name"].value, icon, score);
   };
 
-  // Saves player score after win to firebase and resets score/win prop.
+  // Saves player score after win to firebase.
   const saveScore = async (name, icon, score) => {
     const docRef = doc(collection(db, "PlayerScore"));
     await setDoc(docRef, {
@@ -26,7 +26,7 @@ const WinDisplay = ({ score, page }) => {
     setSent(true);
   };
 
-  // Clears state of score, win on reload to play new game.
+  // Refreshes props and display to restart game.
   const restart = () => {
     window.location.reload();
   };
@@ -46,6 +46,7 @@ const WinDisplay = ({ score, page }) => {
             placeholder="enter your name"
           ></input>
           <div className="iconsList">
+            <div>Choose your player's profile image:</div>
             {imageList.map((image, index) => (
               <label>
                 <input type="radio" name="icon" id={index}></input>

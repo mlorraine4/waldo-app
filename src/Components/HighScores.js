@@ -11,7 +11,7 @@ const HighScores = () => {
   const [scores, setScores] = useState([]);
   let initialized = false;
 
-  // Gets player scores from firestore database.
+  // Gets player high scores from firestore database.
   async function getScores() {
     let scores = [];
     const querySnapshot = await getDocs(collection(db, "PlayerScore"));
@@ -32,6 +32,7 @@ const HighScores = () => {
       initialized = true;
       getScores();
     }
+    console.log(initialized);
   }, []);
 
   return (

@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "./firebase-config";
@@ -227,8 +227,9 @@ function App() {
         <Routes>
           <Route path={""} element={<Home />} />
           <Route path={"/"} element={<Home />} />
+          <Route path={"/waldo-app"} element={<Home />} />
           <Route
-            path={"/ghibli"}
+            path={"/waldo-app/ghibli"}
             element={
               <FindGhibli
                 Game={Game}
@@ -240,7 +241,7 @@ function App() {
             }
           />
           <Route
-            path={"/zelda"}
+            path={"/waldo-app/zelda"}
             element={
               <FindZelda
                 Game={Game}
@@ -252,7 +253,7 @@ function App() {
             }
           />
           <Route
-            path={"/pokemon"}
+            path={"/waldo-app/pokemon"}
             element={
               <FindPokemon
                 Game={Game}
@@ -264,7 +265,7 @@ function App() {
             }
           />
           <Route
-            path={"/horror"}
+            path={"/waldo-app/horror"}
             element={
               <FindHorror
                 Game={Game}
@@ -275,7 +276,7 @@ function App() {
               />
             }
           />
-          <Route path={"/high-scores"} element={<HighScores />} />
+          <Route path={"/waldo-app/high-scores"} element={<HighScores />} />
         </Routes>
       </BrowserRouter>
     </div>

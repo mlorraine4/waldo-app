@@ -1,5 +1,5 @@
 import horror from "../images/horror.webp";
-import CharacterList, { HorrorCharacters } from "./CharacterList";
+import { HorrorCharacters } from "./CharacterList";
 import Header from "./Header";
 import WinDisplay from "./WinDisplay";
 
