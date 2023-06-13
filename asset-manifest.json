@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/waldo-app/static/css/main.45aeae82.css",
-    "main.js": "/waldo-app/static/js/main.f39dbb57.js",
+    "main.js": "/waldo-app/static/js/main.6f5ff729.js",
     "static/media/zelda.png": "/waldo-app/static/media/zelda.52dc8d0a75fb6c49cc51.png",
     "static/media/horror.webp": "/waldo-app/static/media/horror.19c36ff86d38e60a822d.webp",
     "static/media/howl.png": "/waldo-app/static/media/howl.d7871d146a61749ae38c.png",
@@ -50,10 +50,10 @@
     "static/media/no-face.webp": "/waldo-app/static/media/no-face.d893521bdff0a08e2e55.webp",
     "index.html": "/waldo-app/index.html",
     "main.45aeae82.css.map": "/waldo-app/static/css/main.45aeae82.css.map",
-    "main.f39dbb57.js.map": "/waldo-app/static/js/main.f39dbb57.js.map"
+    "main.6f5ff729.js.map": "/waldo-app/static/js/main.6f5ff729.js.map"
   },
   "entrypoints": [
     "static/css/main.45aeae82.css",
-    "static/js/main.f39dbb57.js"
+    "static/js/main.6f5ff729.js"
   ]
 }
