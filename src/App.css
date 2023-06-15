@@ -103,7 +103,7 @@ button {
   margin: 0 auto 10px auto;
 }
 
-.hide {
+.hideStart {
   opacity: 0;
   position: absolute;
   left: 0;
@@ -122,7 +122,7 @@ button {
   height: auto;
 }
 
-.hide:hover {
+.hideStart:hover {
   opacity: 1;
 }
 
@@ -210,7 +210,7 @@ button {
 
 #winDisplay {
   position: fixed;
-  top: 40px;
+  top: 60px;
   width: 200px;
   margin: 0 auto 0 auto;
   border-radius: 8px;
@@ -225,7 +225,7 @@ button {
 
 #winTitle {
   color: rgb(245, 245, 245);
-  padding: 2px;
+  padding-top: 20px;
 }
 
 #submit:active, #cancel:active, #highScoreBtn:active {
@@ -253,8 +253,9 @@ button {
 
 #score {
   color: rgb(169, 197, 47);
+  font-size: 1.5em;
   font-weight: bold;
-  padding: 2px;
+  padding: 5px;
 }
 
 #highScoresMain {
@@ -328,4 +329,13 @@ align-items: center;}
   top: 5px;
   width: 30px;
   height: auto;
+}
+
+.hide {
+  opacity: 0;
+}
+
+#formError {
+  color: red;
+  font-size: .9em;
 }

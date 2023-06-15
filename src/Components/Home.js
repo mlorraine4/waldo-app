@@ -14,7 +14,7 @@ const Home = () => {
           <div className="previewDiv">
             <Link to="/waldo-app/ghibli" reloadDocument>
               <img src={ghibliPrev} className="previewImg"></img>
-              <div className="hide">
+              <div className="hideStart">
                 <img src={start} className="start"></img>
               </div>
             </Link>
@@ -22,7 +22,7 @@ const Home = () => {
           <div className="previewDiv">
             <Link to="/waldo-app/pokemon" reloadDocument>
               <img src={pokemonPrev} className="previewImg"></img>
-              <div className="hide">
+              <div className="hideStart">
                 <img src={start} className="start"></img>
               </div>
             </Link>
@@ -32,7 +32,7 @@ const Home = () => {
           <div className="previewDiv">
             <Link to="/waldo-app/zelda" reloadDocument>
               <img src={zeldaPrev} className="previewImg"></img>
-              <div className="hide">
+              <div className="hideStart">
                 <img src={start} className="start"></img>
               </div>
             </Link>
@@ -40,7 +40,7 @@ const Home = () => {
           <div className="previewDiv">
             <Link to="/waldo-app/horror" reloadDocument>
               <div id="horrorPreview">HORROR</div>
-              <div className="hide">
+              <div className="hideStart">
                 <img src={start} className="start"></img>
               </div>
             </Link>

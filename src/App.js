@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "./firebase-config";
 import FindGhibli from "./Components/FindGhibli";
@@ -223,7 +223,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path={""} element={<Home />} />
           <Route path={"/"} element={<Home />} />
@@ -235,8 +235,6 @@ function App() {
                 Game={Game}
                 score={score}
                 sizeHeader={sizeHeader}
-                handleScore={setScore}
-                handleWin={setWin}
               />
             }
           />
@@ -247,8 +245,6 @@ function App() {
                 Game={Game}
                 score={score}
                 sizeHeader={sizeHeader}
-                handleScore={setScore}
-                handleWin={setWin}
               />
             }
           />
@@ -259,8 +255,6 @@ function App() {
                 Game={Game}
                 score={score}
                 sizeHeader={sizeHeader}
-                handleScore={setScore}
-                handleWin={setWin}
               />
             }
           />
@@ -271,14 +265,12 @@ function App() {
                 Game={Game}
                 score={score}
                 sizeHeader={sizeHeader}
-                handleScore={setScore}
-                handleWin={setWin}
               />
             }
           />
           <Route path={"/waldo-app/high-scores"} element={<HighScores />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

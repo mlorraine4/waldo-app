@@ -10,8 +10,14 @@ const WinDisplay = ({ score, page }) => {
   // Get and save player's chosen name and icon.
   const formSubmit = (e) => {
     e.preventDefault();
-    let icon = Number(document.querySelector('input[name="icon"]:checked').id);
-    saveScore(e.target["name"].value, icon, score);
+    if (document.querySelector('input[name="icon"]:checked') === null) {
+      showFormError();
+    } else {
+       let icon = Number(
+         document.querySelector('input[name="icon"]:checked').id
+       );
+       saveScore(e.target["name"].value, icon, score);
+    }
   };
 
   // Saves player score after win to firebase.
@@ -31,6 +37,14 @@ const WinDisplay = ({ score, page }) => {
     window.location.reload();
   };
 
+  function showFormError() {
+    document.querySelector("#formError").classList.remove("hide");
+  }
+
+  function hideFormError() {
+    document.querySelector("#formError").classList.add("hide");
+  }
+
   if (!sent && Object.keys(score).length !== 0) {
     return (
       <div id="winDisplay">
@@ -46,9 +60,9 @@ const WinDisplay = ({ score, page }) => {
             placeholder="enter your name"
           ></input>
           <div className="iconsList">
-            <div>Choose your player's profile image:</div>
+            <div>Choose your profile image:</div>
             {imageList.map((image, index) => (
-              <label>
+              <label key={index}>
                 <input type="radio" name="icon" id={index}></input>
                 <img key={index} src={image} className="playerIcon"></img>
               </label>
@@ -60,6 +74,7 @@ const WinDisplay = ({ score, page }) => {
           <button type="button" id="cancel" onClick={restart}>
             try again
           </button>
+          <div id="formError" className="hide">*choose an icon before submitting</div>
         </form>
       </div>
     );
