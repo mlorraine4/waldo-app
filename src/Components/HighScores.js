@@ -32,7 +32,6 @@ const HighScores = () => {
       initialized = true;
       getScores();
     }
-    console.log(initialized);
   }, []);
 
   return (
@@ -40,7 +39,7 @@ const HighScores = () => {
       <div id="highScoresHeader">
         <div id="highScoresTitle">HIGH SCORES</div>
         <Link to="/waldo-app">
-          <img id="back" src={backArrow}></img>
+          <img id="back" src={backArrow} alt=""></img>
         </Link>
       </div>
       <div className="boardScores">
@@ -61,6 +60,8 @@ const HighScores = () => {
                   </div>
                 </div>
               );
+            } else {
+              return <></>;
             }
           })}
         </>
@@ -83,6 +84,8 @@ const HighScores = () => {
                   </div>
                 </div>
               );
+            } else {
+              return <></>;
             }
           })}
         </div>
@@ -105,6 +108,8 @@ const HighScores = () => {
                   </div>
                 </div>
               );
+            } else {
+              return <></>;
             }
           })}
         </div>
@@ -127,6 +132,8 @@ const HighScores = () => {
                   </div>
                 </div>
               );
+            } else {
+              return <></>;
             }
           })}
         </div>

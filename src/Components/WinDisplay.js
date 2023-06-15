@@ -13,10 +13,10 @@ const WinDisplay = ({ score, page }) => {
     if (document.querySelector('input[name="icon"]:checked') === null) {
       showFormError();
     } else {
-       let icon = Number(
-         document.querySelector('input[name="icon"]:checked').id
-       );
-       saveScore(e.target["name"].value, icon, score);
+      let icon = Number(
+        document.querySelector('input[name="icon"]:checked').id
+      );
+      saveScore(e.target["name"].value, icon, score);
     }
   };
 
@@ -41,10 +41,6 @@ const WinDisplay = ({ score, page }) => {
     document.querySelector("#formError").classList.remove("hide");
   }
 
-  function hideFormError() {
-    document.querySelector("#formError").classList.add("hide");
-  }
-
   if (!sent && Object.keys(score).length !== 0) {
     return (
       <div id="winDisplay">
@@ -61,17 +57,19 @@ const WinDisplay = ({ score, page }) => {
           ></input>
           <div className="iconsList">
             <div>Choose your profile image:</div>
-            {imageList.map((image, index) => (
-              <label key={index}>
-                <input type="radio" name="icon" id={index}></input>
-                <img
-                  key={index}
-                  src={image}
-                  className="playerIcon"
-                  alt=""
-                ></img>
-              </label>
-            ))}
+            {imageList.map((image, index) => {
+              return (
+                <label key={index}>
+                  <input type="radio" name="icon" id={index}></input>
+                  <img
+                    key={index}
+                    src={image}
+                    className="playerIcon"
+                    alt=""
+                  ></img>
+                </label>
+              );
+            })}
           </div>
           <button type="submit" id="submit">
             save score
@@ -89,11 +87,9 @@ const WinDisplay = ({ score, page }) => {
     return <></>;
   } else {
     return (
-      <>
-        <div id="winDisplay">
-          <div>Your score has been submitted!</div>
-        </div>
-      </>
+      <div id="winDisplay">
+        <div>Your score has been submitted!</div>
+      </div>
     );
   }
 };
