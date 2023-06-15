@@ -17,6 +17,7 @@ const FindHorror = ({ Game, score, sizeHeader }) => {
           <img
             id="horrorImg"
             src={horror}
+            alt=""
             onClick={(e) => {
               NewGame.getPixel(e);
               NewGame.getOffset("#horrorImg");

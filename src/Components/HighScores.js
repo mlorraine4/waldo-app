@@ -50,7 +50,11 @@ const HighScores = () => {
             if (score.page === "ghibli") {
               return (
                 <div className="playerScoreCard" key={score.id}>
-                  <img src={imageList[score.icon]} className="playerIcon"></img>
+                  <img
+                    src={imageList[score.icon]}
+                    className="playerIcon"
+                    alt=""
+                  ></img>
                   <div className="playerName">{score.name}</div>
                   <div className="highScore">
                     {score.score.hour}:{score.score.minute}:{score.score.second}
@@ -68,7 +72,11 @@ const HighScores = () => {
             if (score.page === "zelda") {
               return (
                 <div className="playerScoreCard" key={score.id}>
-                  <img src={imageList[score.icon]} className="playerIcon"></img>
+                  <img
+                    src={imageList[score.icon]}
+                    className="playerIcon"
+                    alt=""
+                  ></img>
                   <div className="playerName">{score.name}</div>
                   <div className="highScore">
                     {score.score.hour}:{score.score.minute}:{score.score.second}
@@ -86,7 +94,11 @@ const HighScores = () => {
             if (score.page === "pokemon") {
               return (
                 <div className="playerScoreCard" key={score.id}>
-                  <img src={imageList[score.icon]} className="playerIcon"></img>
+                  <img
+                    src={imageList[score.icon]}
+                    className="playerIcon"
+                    alt=""
+                  ></img>
                   <div className="playerName">{score.name}</div>
                   <div className="highScore">
                     {score.score.hour}:{score.score.minute}:{score.score.second}
@@ -104,7 +116,11 @@ const HighScores = () => {
             if (score.page === "horror") {
               return (
                 <div className="playerScoreCard" key={score.id}>
-                  <img src={imageList[score.icon]} className="playerIcon"></img>
+                  <img
+                    src={imageList[score.icon]}
+                    className="playerIcon"
+                    alt=""
+                  ></img>
                   <div className="playerName">{score.name}</div>
                   <div className="highScore">
                     {score.score.hour}:{score.score.minute}:{score.score.second}

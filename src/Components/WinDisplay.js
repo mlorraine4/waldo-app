@@ -64,7 +64,12 @@ const WinDisplay = ({ score, page }) => {
             {imageList.map((image, index) => (
               <label key={index}>
                 <input type="radio" name="icon" id={index}></input>
-                <img key={index} src={image} className="playerIcon"></img>
+                <img
+                  key={index}
+                  src={image}
+                  className="playerIcon"
+                  alt=""
+                ></img>
               </label>
             ))}
           </div>
@@ -74,7 +79,9 @@ const WinDisplay = ({ score, page }) => {
           <button type="button" id="cancel" onClick={restart}>
             try again
           </button>
-          <div id="formError" className="hide">*choose an icon before submitting</div>
+          <div id="formError" className="hide">
+            *choose an icon before submitting
+          </div>
         </form>
       </div>
     );

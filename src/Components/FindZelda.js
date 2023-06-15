@@ -17,6 +17,7 @@ const FindZelda = ({ Game, score, sizeHeader }) => {
           <img
             id="zeldaImg"
             src={zelda}
+            alt=""
             onClick={(e) => {
               NewGame.getPixel(e);
               NewGame.getOffset("#zeldaImg");

@@ -17,6 +17,7 @@ const FindGhibli = ({ Game, score, sizeHeader }) => {
           <img
             id="ghibliImg"
             src={ghibli}
+            alt=""
             onClick={(e) => {
               newGame.getPixel(e);
               newGame.getOffset("#ghibliImg");

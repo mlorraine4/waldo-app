@@ -19,6 +19,7 @@ const FindPokemon = ({ Game, score, sizeHeader }) => {
           <img
             id="pokemonImg"
             src={pokemon}
+            alt=""
             onClick={(e) => {
               NewGame.getPixel(e);
               NewGame.getOffset("#pokemonImg");
